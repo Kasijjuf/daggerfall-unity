@@ -255,8 +255,9 @@ namespace DaggerfallWorkshop.Game.UserInterface
         {
             if (indexA < 0 || indexB < 0 || indexA >= listItems.Count || indexB >= listItems.Count)
                 throw new IndexOutOfRangeException("ListBox: UpdateItem index out of range.");
-            else
-            {
+            else if (indexA == indexB) {
+                // Do nothing
+            } else {
                 TextLabel temp = listItems[indexA];
                 listItems[indexA] = listItems[indexB];
                 listItems[indexB] = temp;
